@@ -1,0 +1,12 @@
+@{
+    ViewData["Title"] = "Files Page";
+    var Files = ViewBag.Files as string[];
+}
+
+<div class="text-center">
+    <h1 class="display-4">@ViewData["Title"]</h1>
+    @foreach (var file in Files)
+    {
+        <p><a href="@Url.Action("Download", "Home", new { file })">@file</a></p>
+    }
+</div>
